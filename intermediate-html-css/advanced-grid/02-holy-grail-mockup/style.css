@@ -89,3 +89,52 @@
   font-size: 13px;
   font-weight: normal;
 }
+/* solution */
+.container{
+  display: grid;
+  grid-template: 2fr 1fr 12fr 1fr/1fr 4fr ;
+  gap: 4px;
+}
+.header{
+  grid-area:1/1/2/-1 ;
+  display: grid;
+  grid-template: 1fr/2fr 4fr;
+  justify-items: stretch;
+}
+.sidebar{
+  grid-area: 2/1/-2/2;
+  display: grid;
+  grid-template:repeat(4,1fr)/1fr;
+  gap:50px;
+  place-items: stretch stretch;
+}
+.nav{
+  grid-area: 2/2/3/-1;
+}
+.footer{
+  grid-area:-2/1/-1/-1;
+}
+.article{
+  grid-area: 3/2/-2/-1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  /* grid-template-rows: repeat(auto-fit,200px); */
+  gap: 15px;
+}
+.menu ul{
+  display: grid;
+  grid-template: 1fr/ repeat(4,1fr);
+}
+.logo,.menu ul>*{
+  justify-self: start;
+}
+ul{
+  list-style: none;
+}
+.nav ul{
+  display: grid;
+  grid-template: 1fr/repeat(3,1fr);
+}
+.sidebar div {
+  place-content: center center;
+}
